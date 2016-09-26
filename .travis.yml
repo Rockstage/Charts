@@ -17,4 +17,5 @@ script:
   - bundle exec rake test
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'Charts'
+  - bundle exec rake coverage
+  - bash <(curl -s https://codecov.io/bash) -f "coverage/*.xml"

@@ -108,3 +108,12 @@ task :test do
   end
 
 end
+
+desc "Generate coverage" 
+task :coverage do
+  
+  schemes.each do |scheme| 
+    sh "slather coverage --scheme #{scheme} -x --output-directory coverage/#{scheme} #{project_name}"
+  end
+
+end
